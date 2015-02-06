@@ -112,11 +112,8 @@ public class FirstHtttpServer {
 
         @Override
         public void handle(HttpExchange he) throws IOException {
-            String s = he.getRequestURI().toString();
-            String filename = s.substring(s.lastIndexOf("/")+1);
-            
-            
-            File file = new File("public/" + filename);
+
+            File file = new File("public/" + "html.html");
             byte[] bytesToSend = new byte[(int) file.length()];
             try {
                 BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
